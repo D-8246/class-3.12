@@ -1,0 +1,29 @@
+﻿@model OrdersViewModel;
+
+<html>
+<body>
+    <div class="container mt-5">
+        <table class="table table-striped table-bordered mt-5">
+            <thead>
+                <tr>
+                    <th>Order Id</th>
+                    <th>Order Date</th>
+                    <th>Ship Name</th>
+                    <th>Ship Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Order o in Model.Orders)
+                {
+                    <tr>
+                        <td>@o.Id</td>
+                        <td>@o.Date.ToLongDateString()</td>
+                        <td>@o.ShipName</td>
+                        <td>@o.ShipAddress</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
